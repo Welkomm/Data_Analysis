@@ -1,4 +1,4 @@
-import Vizualisation.streamlit as st
+import streamlit as st
 # importing numpy and pandas for to work with sample data.
 import numpy as np
 import pandas as pd
