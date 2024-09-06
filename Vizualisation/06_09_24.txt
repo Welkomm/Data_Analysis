@@ -1,0 +1,10 @@
+in anaconda navigator
+install streamlit
+pip install streamlit
+streamlit Hello
+
+in the VSCode terminal: 
+    pip install streamlit
+    streamlit Hello
+    create a .py doc 
+    streamlit run [doc].py
