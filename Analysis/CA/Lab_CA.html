@@ -7510,30 +7510,18 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0b02f7bb">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=51cd2ffb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Lab-CA:-Correspondence-Analysis-(CA)-using-prince-on-the-French_elections-dataset"><a id="toc1_"></a><a href="#toc0_">Lab CA: Correspondence Analysis (CA) using prince on the French_elections dataset</a><a class="anchor-link" href="#Lab-CA:-Correspondence-Analysis-(CA)-using-prince-on-the-French_elections-dataset">¶</a></h1><p>Lab Duration: 2-3 Hours
-Prerequisites: Basic understanding of Python, Pandas, Matplotlib, and Correspondence Analysis (CA)</p>
-<p>Lab Objectives</p>
-<p>By the end of this lab, students will be able to:</p>
-<ol>
-<li>Perform CA using the prince library.</li>
-<li>Show and interpret the eigenvalues, explained variance and cumulative explained variance.</li>
-<li>Get the new coordinates for rows (Row scores) and columns (Column scores) and show the data
-in the new Factor map.</li>
-<li>Get and interpret the column/row contributions to the total explained variance of each
-dimension.</li>
-<li>Know the quality of representation of each point in the factor map.</li>
-</ol>
+<h1 id="Lab-CA:-Correspondence-Analysis-(CA)-using-prince-on-the-French_elections-dataset"><a id="toc1_"></a><a href="#toc0_">Lab CA: Correspondence Analysis (CA) using prince on the French_elections dataset</a><a class="anchor-link" href="#Lab-CA:-Correspondence-Analysis-(CA)-using-prince-on-the-French_elections-dataset">¶</a></h1>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fdb0bd4c">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=da180953">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7544,7 +7532,8 @@ dimension.</li>
 <li><a href="#toc1_">Lab CA: Correspondence Analysis (CA) using prince on the French_elections dataset</a><ul>
 <li><a href="#toc1_1_">Part 1: Introduction to CA and the French Elections Voting Data</a></li>
 <li><a href="#toc1_2_">Part 2: Setting up the Environment and Loading Data</a><ul>
-<li><a href="#toc1_2_1_">Step 2: Load the Dataset and display its first 5 rows</a></li>
+<li><a href="#toc1_2_1_">Step 1 : Install Required Librairies</a></li>
+<li><a href="#toc1_2_2_">Step 2: Load the Dataset and display its first 5 rows</a></li>
 </ul>
 </li>
 <li><a href="#toc1_3_">Part 3: Performing CA using prince</a><ul>
@@ -7580,33 +7569,62 @@ dimension.</li>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=983da7fc">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4d4a5dc0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Part-1:-Introduction-to-CA-and-the-French-Elections-Voting-Data"><a id="toc1_1_"></a><a href="#toc0_">Part 1: Introduction to CA and the French Elections Voting Data</a><a class="anchor-link" href="#Part-1:-Introduction-to-CA-and-the-French-Elections-Voting-Data">¶</a></h2><p>CA Overview</p>
-<p>Correspondence Analysis (CA)</p>
+<h2 id="Part-1:-Introduction-to-CA-and-the-French-Elections-Voting-Data"><a id="toc1_1_"></a><a href="#toc0_">Part 1: Introduction to CA and the French Elections Voting Data</a><a class="anchor-link" href="#Part-1:-Introduction-to-CA-and-the-French-Elections-Voting-Data">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=aa893af7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The French Elections Voting Dataset
+presidential elections. It can be used directly for correspondence analysis.</p>
 <ul>
-<li>Correspondence analysis is a useful data visualization technique for finding out and displaying the relationship between categories. It uses a graph that plots data, visually showing the outcome of two or more data points.</li>
-<li>CA uses a contingency tablea table of frequenciesthat shows how the categories of the variables are distributed. The data in the table undergoes a series of transformations in relation
-to the data around it to produce relational data. The resulting data is then plotted to show those relationships visually.</li>
+<li>This dataset counts the number of voters per region for each candidate in the 2022 French</li>
 </ul>
-<p>The French Elections Voting Dataset</p>
 <ul>
-<li>This dataset counts the number of voters per region for each candidate in the 2022 French presidential elections. It can be used directly for correspondence analysis.</li>
-<li>The dataset's name in this context is usually French Elections Voting Data, and it consists of a contingency table where the rows represent the regions or departments, and the columns represent the candidates. Each cell in the table holds the number of votes for a particular candidate in a specific region.</li>
+<li>The dataset's name in this context is usually French Elections Voting Data, and it consists of a contingency table where the rows represent the regions or departments, and the columns represent the candidates. Each cell in the table holds the number of votes for a particular candidate in a specific region</li>
 </ul>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0a99410d">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a3ac7157">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Part-2:-Setting-up-the-Environment-and-Loading-Data"><a id="toc1_2_"></a><a href="#toc0_">Part 2: Setting up the Environment and Loading Data</a><a class="anchor-link" href="#Part-2:-Setting-up-the-Environment-and-Loading-Data">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e4a07fd5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Step-1-:-Install-Required-Librairies"><a id="toc1_2_1_"></a><a href="#toc0_">Step 1 : Install Required Librairies</a><a class="anchor-link" href="#Step-1-:-Install-Required-Librairies">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ea8baaa6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>prince<span class="w"> </span>pandas<span class="w"> </span>seaborn<span class="w"> </span>matplotlib<span class="w"> </span>scikit-learn
@@ -7630,7 +7648,7 @@ Requirement already satisfied: scikit-learn in c:\users\welco\anaconda3\envs\dat
 Requirement already satisfied: altair&lt;6.0.0,&gt;=4.2.2 in c:\users\welco\anaconda3\envs\data_viz\lib\site-packages (from prince) (5.4.1)
 Requirement already satisfied: numpy&gt;=1.26.0 in c:\users\welco\anaconda3\envs\data_viz\lib\site-packages (from pandas) (2.1.1)
 Requirement already satisfied: python-dateutil&gt;=2.8.2 in c:\users\welco\anaconda3\envs\data_viz\lib\site-packages (from pandas) (2.9.0)
-Requirement already satisfied: pytz&gt;=2020.1 in c:\users\welco\anaconda3\envs\data_viz\lib\site-packages (from pandas) (2024.2)
+Requirement already satisfied: pytz&gt;=2020.1 in c:\users\welco\anaconda3\envs\data_viz\lib\site-packages (from pandas) (2024.1)
 Requirement already satisfied: tzdata&gt;=2022.7 in c:\users\welco\anaconda3\envs\data_viz\lib\site-packages (from pandas) (2024.1)
 Requirement already satisfied: contourpy&gt;=1.0.1 in c:\users\welco\anaconda3\envs\data_viz\lib\site-packages (from matplotlib) (1.3.0)
 Requirement already satisfied: cycler&gt;=0.10 in c:\users\welco\anaconda3\envs\data_viz\lib\site-packages (from matplotlib) (0.12.1)
@@ -7650,19 +7668,19 @@ Requirement already satisfied: six&gt;=1.5 in c:\users\welco\anaconda3\envs\data
 Requirement already satisfied: attrs&gt;=22.2.0 in c:\users\welco\anaconda3\envs\data_viz\lib\site-packages (from jsonschema&gt;=3.0-&gt;altair&lt;6.0.0,&gt;=4.2.2-&gt;prince) (24.2.0)
 Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in c:\users\welco\anaconda3\envs\data_viz\lib\site-packages (from jsonschema&gt;=3.0-&gt;altair&lt;6.0.0,&gt;=4.2.2-&gt;prince) (2023.12.1)
 Requirement already satisfied: referencing&gt;=0.28.4 in c:\users\welco\anaconda3\envs\data_viz\lib\site-packages (from jsonschema&gt;=3.0-&gt;altair&lt;6.0.0,&gt;=4.2.2-&gt;prince) (0.35.1)
-Requirement already satisfied: rpds-py&gt;=0.7.1 in c:\users\welco\anaconda3\envs\data_viz\lib\site-packages (from jsonschema&gt;=3.0-&gt;altair&lt;6.0.0,&gt;=4.2.2-&gt;prince) (0.20.0)
-Requirement already satisfied: MarkupSafe&gt;=2.0 in c:\users\welco\anaconda3\envs\data_viz\lib\site-packages (from jinja2-&gt;altair&lt;6.0.0,&gt;=4.2.2-&gt;prince) (2.1.5)
+Requirement already satisfied: rpds-py&gt;=0.7.1 in c:\users\welco\anaconda3\envs\data_viz\lib\site-packages (from jsonschema&gt;=3.0-&gt;altair&lt;6.0.0,&gt;=4.2.2-&gt;prince) (0.10.6)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in c:\users\welco\anaconda3\envs\data_viz\lib\site-packages (from jinja2-&gt;altair&lt;6.0.0,&gt;=4.2.2-&gt;prince) (2.1.3)
 </pre>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=234ed597">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=bec80da7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -7675,33 +7693,22 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in c:\users\welco\anaconda3\en
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7dac5b6d">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=72bc2f15">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Part-2:-Setting-up-the-Environment-and-Loading-Data"><a id="toc1_2_"></a><a href="#toc0_">Part 2: Setting up the Environment and Loading Data</a><a class="anchor-link" href="#Part-2:-Setting-up-the-Environment-and-Loading-Data">¶</a></h2>
+<h3 id="Step-2:-Load-the-Dataset-and-display-its-first-5-rows"><a id="toc1_2_2_"></a><a href="#toc0_">Step 2: Load the Dataset and display its first 5 rows</a><a class="anchor-link" href="#Step-2:-Load-the-Dataset-and-display-its-first-5-rows">¶</a></h3>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7200bfc3">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Step-2:-Load-the-Dataset-and-display-its-first-5-rows"><a id="toc1_2_1_"></a><a href="#toc0_">Step 2: Load the Dataset and display its first 5 rows</a><a class="anchor-link" href="#Step-2:-Load-the-Dataset-and-display-its-first-5-rows">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1cb51a56">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=203dc9ff">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">dataset</span><span class="o">=</span> <span class="n">prince</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">load_french_elections</span><span class="p">()</span>
@@ -7716,7 +7723,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in c:\users\welco\anaconda3\en
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7863,7 +7870,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in c:\users\welco\anaconda3\en
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e513433a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2f582f36">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7875,7 +7882,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in c:\users\welco\anaconda3\en
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=84d2781e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=07dfc735">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7886,7 +7893,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in c:\users\welco\anaconda3\en
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e5405063">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bf34fe5d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7896,12 +7903,12 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in c:\users\welco\anaconda3\en
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=39c7d57b">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=781b254a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">ca</span> <span class="o">=</span> <span class="n">prince</span><span class="o">.</span><span class="n">CA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
@@ -7916,7 +7923,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in c:\users\welco\anaconda3\en
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=34538ddf">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=307655e9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7935,7 +7942,7 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in c:\users\welco\anaconda3\en
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c40a4d61">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c0d9f950">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7945,12 +7952,12 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in c:\users\welco\anaconda3\en
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=25c13caf">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=083a9ac6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">ca</span> <span class="o">=</span> <span class="n">ca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
@@ -7959,12 +7966,12 @@ Requirement already satisfied: MarkupSafe&gt;=2.0 in c:\users\welco\anaconda3\en
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=72a27b8a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a876e5b3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Print eigenvalues, explained variance and total inertia of ca</span>
@@ -7993,7 +8000,7 @@ component
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=51906845">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c6aaefac">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8005,7 +8012,7 @@ component
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ad123728">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b1f33ae1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8015,12 +8022,12 @@ component
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=678544ae">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c7deacc4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Get the rows (regions) and columns (candidates) coordinates.</span>
@@ -8032,7 +8039,7 @@ component
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=02384e71">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cb55c403">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8042,17 +8049,15 @@ component
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f798e4d8">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=23e183cb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Dispaly the row coordinates.</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">row_coordinates</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">row_coordinates</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">col_coordinates</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -8086,7 +8091,7 @@ Lassalle      -0.271867 -0.091407
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=38aa4b5d">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3494de3d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8097,7 +8102,7 @@ Lassalle      -0.271867 -0.091407
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f13a44f0">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f2c6c2c7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8108,7 +8113,7 @@ Lassalle      -0.271867 -0.091407
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=251492cd">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ff7f41ba">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8118,12 +8123,12 @@ Lassalle      -0.271867 -0.091407
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=690d9edc">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5780ca65">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [61]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">ca</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
@@ -8145,26 +8150,26 @@ Lassalle      -0.271867 -0.091407
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[61]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[36]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-59f1daff01614ed5847bd9796350436b.vega-embed {
+  #altair-viz-8feb1667f2754533ac0621eeed4638f8.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-59f1daff01614ed5847bd9796350436b.vega-embed details,
-  #altair-viz-59f1daff01614ed5847bd9796350436b.vega-embed details summary {
+  #altair-viz-8feb1667f2754533ac0621eeed4638f8.vega-embed details,
+  #altair-viz-8feb1667f2754533ac0621eeed4638f8.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-59f1daff01614ed5847bd9796350436b"></div>
+<div id="altair-viz-8feb1667f2754533ac0621eeed4638f8"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-59f1daff01614ed5847bd9796350436b") {
-      outputDiv = document.getElementById("altair-viz-59f1daff01614ed5847bd9796350436b");
+    if (outputDiv.id !== "altair-viz-8feb1667f2754533ac0621eeed4638f8") {
+      outputDiv = document.getElementById("altair-viz-8feb1667f2754533ac0621eeed4638f8");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8210,14 +8215,14 @@ Lassalle      -0.271867 -0.091407
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"data": {"name": "data-4e21843749abf80cabc054fa631903cd"}, "mark": {"type": "circle", "size": 50}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "tooltip": [{"field": "variable", "type": "nominal"}, {"field": "value", "type": "nominal"}, {"field": "component 0", "type": "quantitative"}, {"field": "component 1", "type": "quantitative"}], "x": {"axis": {"title": "component 0 \u2014 40.82%"}, "field": "component 0", "scale": {"zero": false}, "type": "quantitative"}, "y": {"axis": {"title": "component 1 \u2014 36.15%"}, "field": "component 1", "scale": {"zero": false}, "type": "quantitative"}}, "name": "view_12"}, {"data": {"name": "data-0d56b42514b677d02243b0fc52ccc547"}, "mark": {"type": "circle", "size": 50}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "tooltip": [{"field": "variable", "type": "nominal"}, {"field": "value", "type": "nominal"}, {"field": "component 0", "type": "quantitative"}, {"field": "component 1", "type": "quantitative"}], "x": {"axis": {"title": "component 0 \u2014 40.82%"}, "field": "component 0", "scale": {"zero": false}, "type": "quantitative"}, "y": {"axis": {"title": "component 1 \u2014 36.15%"}, "field": "component 1", "scale": {"zero": false}, "type": "quantitative"}}}], "params": [{"name": "param_13", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales", "views": ["view_12"]}], "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-4e21843749abf80cabc054fa631903cd": [{"component 0": -0.05863780298801684, "component 1": 0.03830303368230361, "variable": "region", "value": "Auvergne-Rh\u00f4ne-Alpes", "label": "Auvergne-Rh\u00f4ne-Alpes"}, {"component 0": -0.07081540620096784, "component 1": -0.07760400138326747, "variable": "region", "value": "Bourgogne-Franche-Comt\u00e9", "label": "Bourgogne-Franche-Comt\u00e9"}, {"component 0": -0.08365536312333365, "component 1": 0.11049076933986796, "variable": "region", "value": "Bretagne", "label": "Bretagne"}, {"component 0": -0.024624010383987278, "component 1": -0.05579864652392634, "variable": "region", "value": "Centre-Val de Loire", "label": "Centre-Val de Loire"}, {"component 0": 0.1273701233846306, "component 1": -0.2817548959977827, "variable": "region", "value": "Corse", "label": "Corse"}, {"component 0": -0.013450030921762363, "component 1": -0.1302748676917239, "variable": "region", "value": "Grand Est", "label": "Grand Est"}, {"component 0": 0.8189510679942219, "component 1": -0.08691997985451776, "variable": "region", "value": "Guadeloupe", "label": "Guadeloupe"}, {"component 0": 0.9093838803301519, "component 1": -0.1950870605684917, "variable": "region", "value": "Guyane", "label": "Guyane"}, {"component 0": 0.013732211529156477, "component 1": -0.19010506642745545, "variable": "region", "value": "Hauts-de-France", "label": "Hauts-de-France"}, {"component 0": 0.5699784467809027, "component 1": -0.12620139384006812, "variable": "region", "value": "La R\u00e9union", "label": "La R\u00e9union"}, {"component 0": 0.830652450868351, "component 1": -0.08346172586634067, "variable": "region", "value": "Martinique", "label": "Martinique"}, {"component 0": 0.7144022982162035, "component 1": -0.4100858633003462, "variable": "region", "value": "Mayotte", "label": "Mayotte"}, {"component 0": -0.03542876309508139, "component 1": -0.06746561826077282, "variable": "region", "value": "Normandie", "label": "Normandie"}, {"component 0": -0.11050741584453615, "component 1": -0.004011695300169967, "variable": "region", "value": "Nouvelle-Aquitaine", "label": "Nouvelle-Aquitaine"}, {"component 0": -0.07859242844479201, "component 1": -0.03331650668996922, "variable": "region", "value": "Occitanie", "label": "Occitanie"}, {"component 0": -0.05614440291568989, "component 1": 0.07216106309919251, "variable": "region", "value": "Pays de la Loire", "label": "Pays de la Loire"}, {"component 0": 0.011439418072918947, "component 1": -0.10658768661368036, "variable": "region", "value": "Provence-Alpes-C\u00f4te d'Azur", "label": "Provence-Alpes-C\u00f4te d'Azur"}, {"component 0": 0.09161017774209004, "component 1": 0.2510566007649314, "variable": "region", "value": "\u00cele-de-France", "label": "\u00cele-de-France"}], "data-0d56b42514b677d02243b0fc52ccc547": [{"component 0": -0.03473175701649927, "component 1": -0.09129069808968168, "variable": "candidate", "value": "Arthaud", "label": "Arthaud"}, {"component 0": -0.09470816476067653, "component 1": -0.06469559978922419, "variable": "candidate", "value": "Dupont-Aignan", "label": "Dupont-Aignan"}, {"component 0": -0.13789664410966385, "component 1": 0.052846144209970226, "variable": "candidate", "value": "Hidalgo", "label": "Hidalgo"}, {"component 0": -0.12622833356116886, "component 1": 0.1888359673722399, "variable": "candidate", "value": "Jadot", "label": "Jadot"}, {"component 0": -0.2718670495982157, "component 1": -0.09140713874793183, "variable": "candidate", "value": "Lassalle", "label": "Lassalle"}, {"component 0": -0.11705635918325398, "component 1": -0.2156792403202124, "variable": "candidate", "value": "Le Pen", "label": "Le Pen"}, {"component 0": -0.10602671271196835, "component 1": 0.10219861920069193, "variable": "candidate", "value": "Macron", "label": "Macron"}, {"component 0": 0.0904916637885146, "component 1": 0.16251682008581853, "variable": "candidate", "value": "M\u00e9lenchon", "label": "M\u00e9lenchon"}, {"component 0": -0.12418309730025903, "component 1": -0.010074260227207671, "variable": "candidate", "value": "Poutou", "label": "Poutou"}, {"component 0": -0.06281907093170777, "component 1": 0.16385984822107882, "variable": "candidate", "value": "P\u00e9cresse", "label": "P\u00e9cresse"}, {"component 0": -0.17160912725900213, "component 1": -0.034664844004597704, "variable": "candidate", "value": "Roussel", "label": "Roussel"}, {"component 0": -0.09180172598570406, "component 1": 0.008808114295821071, "variable": "candidate", "value": "Zemmour", "label": "Zemmour"}, {"component 0": 0.2106832275207779, "component 1": -0.07726647824246717, "variable": "candidate", "value": "Abstention", "label": "Abstention"}, {"component 0": -0.040778911154341936, "component 1": 0.012151459979702373, "variable": "candidate", "value": "Blank", "label": "Blank"}]}}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"data": {"name": "data-4e21843749abf80cabc054fa631903cd"}, "mark": {"type": "circle", "size": 50}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "tooltip": [{"field": "variable", "type": "nominal"}, {"field": "value", "type": "nominal"}, {"field": "component 0", "type": "quantitative"}, {"field": "component 1", "type": "quantitative"}], "x": {"axis": {"title": "component 0 \u2014 40.82%"}, "field": "component 0", "scale": {"zero": false}, "type": "quantitative"}, "y": {"axis": {"title": "component 1 \u2014 36.15%"}, "field": "component 1", "scale": {"zero": false}, "type": "quantitative"}}, "name": "view_3"}, {"data": {"name": "data-0d56b42514b677d02243b0fc52ccc547"}, "mark": {"type": "circle", "size": 50}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "tooltip": [{"field": "variable", "type": "nominal"}, {"field": "value", "type": "nominal"}, {"field": "component 0", "type": "quantitative"}, {"field": "component 1", "type": "quantitative"}], "x": {"axis": {"title": "component 0 \u2014 40.82%"}, "field": "component 0", "scale": {"zero": false}, "type": "quantitative"}, "y": {"axis": {"title": "component 1 \u2014 36.15%"}, "field": "component 1", "scale": {"zero": false}, "type": "quantitative"}}}], "params": [{"name": "param_3", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales", "views": ["view_3"]}], "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-4e21843749abf80cabc054fa631903cd": [{"component 0": -0.05863780298801684, "component 1": 0.03830303368230361, "variable": "region", "value": "Auvergne-Rh\u00f4ne-Alpes", "label": "Auvergne-Rh\u00f4ne-Alpes"}, {"component 0": -0.07081540620096784, "component 1": -0.07760400138326747, "variable": "region", "value": "Bourgogne-Franche-Comt\u00e9", "label": "Bourgogne-Franche-Comt\u00e9"}, {"component 0": -0.08365536312333365, "component 1": 0.11049076933986796, "variable": "region", "value": "Bretagne", "label": "Bretagne"}, {"component 0": -0.024624010383987278, "component 1": -0.05579864652392634, "variable": "region", "value": "Centre-Val de Loire", "label": "Centre-Val de Loire"}, {"component 0": 0.1273701233846306, "component 1": -0.2817548959977827, "variable": "region", "value": "Corse", "label": "Corse"}, {"component 0": -0.013450030921762363, "component 1": -0.1302748676917239, "variable": "region", "value": "Grand Est", "label": "Grand Est"}, {"component 0": 0.8189510679942219, "component 1": -0.08691997985451776, "variable": "region", "value": "Guadeloupe", "label": "Guadeloupe"}, {"component 0": 0.9093838803301519, "component 1": -0.1950870605684917, "variable": "region", "value": "Guyane", "label": "Guyane"}, {"component 0": 0.013732211529156477, "component 1": -0.19010506642745545, "variable": "region", "value": "Hauts-de-France", "label": "Hauts-de-France"}, {"component 0": 0.5699784467809027, "component 1": -0.12620139384006812, "variable": "region", "value": "La R\u00e9union", "label": "La R\u00e9union"}, {"component 0": 0.830652450868351, "component 1": -0.08346172586634067, "variable": "region", "value": "Martinique", "label": "Martinique"}, {"component 0": 0.7144022982162035, "component 1": -0.4100858633003462, "variable": "region", "value": "Mayotte", "label": "Mayotte"}, {"component 0": -0.03542876309508139, "component 1": -0.06746561826077282, "variable": "region", "value": "Normandie", "label": "Normandie"}, {"component 0": -0.11050741584453615, "component 1": -0.004011695300169967, "variable": "region", "value": "Nouvelle-Aquitaine", "label": "Nouvelle-Aquitaine"}, {"component 0": -0.07859242844479201, "component 1": -0.03331650668996922, "variable": "region", "value": "Occitanie", "label": "Occitanie"}, {"component 0": -0.05614440291568989, "component 1": 0.07216106309919251, "variable": "region", "value": "Pays de la Loire", "label": "Pays de la Loire"}, {"component 0": 0.011439418072918947, "component 1": -0.10658768661368036, "variable": "region", "value": "Provence-Alpes-C\u00f4te d'Azur", "label": "Provence-Alpes-C\u00f4te d'Azur"}, {"component 0": 0.09161017774209004, "component 1": 0.2510566007649314, "variable": "region", "value": "\u00cele-de-France", "label": "\u00cele-de-France"}], "data-0d56b42514b677d02243b0fc52ccc547": [{"component 0": -0.03473175701649927, "component 1": -0.09129069808968168, "variable": "candidate", "value": "Arthaud", "label": "Arthaud"}, {"component 0": -0.09470816476067653, "component 1": -0.06469559978922419, "variable": "candidate", "value": "Dupont-Aignan", "label": "Dupont-Aignan"}, {"component 0": -0.13789664410966385, "component 1": 0.052846144209970226, "variable": "candidate", "value": "Hidalgo", "label": "Hidalgo"}, {"component 0": -0.12622833356116886, "component 1": 0.1888359673722399, "variable": "candidate", "value": "Jadot", "label": "Jadot"}, {"component 0": -0.2718670495982157, "component 1": -0.09140713874793183, "variable": "candidate", "value": "Lassalle", "label": "Lassalle"}, {"component 0": -0.11705635918325398, "component 1": -0.2156792403202124, "variable": "candidate", "value": "Le Pen", "label": "Le Pen"}, {"component 0": -0.10602671271196835, "component 1": 0.10219861920069193, "variable": "candidate", "value": "Macron", "label": "Macron"}, {"component 0": 0.0904916637885146, "component 1": 0.16251682008581853, "variable": "candidate", "value": "M\u00e9lenchon", "label": "M\u00e9lenchon"}, {"component 0": -0.12418309730025903, "component 1": -0.010074260227207671, "variable": "candidate", "value": "Poutou", "label": "Poutou"}, {"component 0": -0.06281907093170777, "component 1": 0.16385984822107882, "variable": "candidate", "value": "P\u00e9cresse", "label": "P\u00e9cresse"}, {"component 0": -0.17160912725900213, "component 1": -0.034664844004597704, "variable": "candidate", "value": "Roussel", "label": "Roussel"}, {"component 0": -0.09180172598570406, "component 1": 0.008808114295821071, "variable": "candidate", "value": "Zemmour", "label": "Zemmour"}, {"component 0": 0.2106832275207779, "component 1": -0.07726647824246717, "variable": "candidate", "value": "Abstention", "label": "Abstention"}, {"component 0": -0.040778911154341936, "component 1": 0.012151459979702373, "variable": "candidate", "value": "Blank", "label": "Blank"}]}}, {"mode": "vega-lite"});
 </script>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2a996cb4">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=acc0d7fa">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8237,7 +8242,7 @@ Lassalle      -0.271867 -0.091407
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ca6769d1">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1479596f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8249,7 +8254,7 @@ Lassalle      -0.271867 -0.091407
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cb7e3b61">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=05d32a74">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8259,12 +8264,12 @@ Lassalle      -0.271867 -0.091407
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=49de6e67">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6a595ec4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [58]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">ca</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
@@ -8286,26 +8291,26 @@ Lassalle      -0.271867 -0.091407
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[58]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[37]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-c77bd896cfb74a509758123a526f329b.vega-embed {
+  #altair-viz-aaa1b67a39234632a228230f83edda25.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-c77bd896cfb74a509758123a526f329b.vega-embed details,
-  #altair-viz-c77bd896cfb74a509758123a526f329b.vega-embed details summary {
+  #altair-viz-aaa1b67a39234632a228230f83edda25.vega-embed details,
+  #altair-viz-aaa1b67a39234632a228230f83edda25.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-c77bd896cfb74a509758123a526f329b"></div>
+<div id="altair-viz-aaa1b67a39234632a228230f83edda25"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c77bd896cfb74a509758123a526f329b") {
-      outputDiv = document.getElementById("altair-viz-c77bd896cfb74a509758123a526f329b");
+    if (outputDiv.id !== "altair-viz-aaa1b67a39234632a228230f83edda25") {
+      outputDiv = document.getElementById("altair-viz-aaa1b67a39234632a228230f83edda25");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8351,14 +8356,14 @@ Lassalle      -0.271867 -0.091407
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "circle", "size": 0}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "tooltip": [{"field": "variable", "type": "nominal"}, {"field": "value", "type": "nominal"}, {"field": "component 0", "type": "quantitative"}, {"field": "component 1", "type": "quantitative"}], "x": {"axis": {"title": "component 0 \u2014 40.82%"}, "field": "component 0", "scale": {"zero": false}, "type": "quantitative"}, "y": {"axis": {"title": "component 1 \u2014 36.15%"}, "field": "component 1", "scale": {"zero": false}, "type": "quantitative"}}, "name": "view_9"}, {"mark": {"type": "text"}, "encoding": {"text": {"field": "label", "type": "nominal"}, "x": {"axis": {"title": "component 0 \u2014 40.82%"}, "field": "component 0", "scale": {"zero": false}, "type": "quantitative"}, "y": {"axis": {"title": "component 1 \u2014 36.15%"}, "field": "component 1", "scale": {"zero": false}, "type": "quantitative"}}}], "data": {"name": "data-0d56b42514b677d02243b0fc52ccc547"}, "params": [{"name": "param_10", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales", "views": ["view_9"]}], "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-0d56b42514b677d02243b0fc52ccc547": [{"component 0": -0.03473175701649927, "component 1": -0.09129069808968168, "variable": "candidate", "value": "Arthaud", "label": "Arthaud"}, {"component 0": -0.09470816476067653, "component 1": -0.06469559978922419, "variable": "candidate", "value": "Dupont-Aignan", "label": "Dupont-Aignan"}, {"component 0": -0.13789664410966385, "component 1": 0.052846144209970226, "variable": "candidate", "value": "Hidalgo", "label": "Hidalgo"}, {"component 0": -0.12622833356116886, "component 1": 0.1888359673722399, "variable": "candidate", "value": "Jadot", "label": "Jadot"}, {"component 0": -0.2718670495982157, "component 1": -0.09140713874793183, "variable": "candidate", "value": "Lassalle", "label": "Lassalle"}, {"component 0": -0.11705635918325398, "component 1": -0.2156792403202124, "variable": "candidate", "value": "Le Pen", "label": "Le Pen"}, {"component 0": -0.10602671271196835, "component 1": 0.10219861920069193, "variable": "candidate", "value": "Macron", "label": "Macron"}, {"component 0": 0.0904916637885146, "component 1": 0.16251682008581853, "variable": "candidate", "value": "M\u00e9lenchon", "label": "M\u00e9lenchon"}, {"component 0": -0.12418309730025903, "component 1": -0.010074260227207671, "variable": "candidate", "value": "Poutou", "label": "Poutou"}, {"component 0": -0.06281907093170777, "component 1": 0.16385984822107882, "variable": "candidate", "value": "P\u00e9cresse", "label": "P\u00e9cresse"}, {"component 0": -0.17160912725900213, "component 1": -0.034664844004597704, "variable": "candidate", "value": "Roussel", "label": "Roussel"}, {"component 0": -0.09180172598570406, "component 1": 0.008808114295821071, "variable": "candidate", "value": "Zemmour", "label": "Zemmour"}, {"component 0": 0.2106832275207779, "component 1": -0.07726647824246717, "variable": "candidate", "value": "Abstention", "label": "Abstention"}, {"component 0": -0.040778911154341936, "component 1": 0.012151459979702373, "variable": "candidate", "value": "Blank", "label": "Blank"}]}}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "circle", "size": 0}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "tooltip": [{"field": "variable", "type": "nominal"}, {"field": "value", "type": "nominal"}, {"field": "component 0", "type": "quantitative"}, {"field": "component 1", "type": "quantitative"}], "x": {"axis": {"title": "component 0 \u2014 40.82%"}, "field": "component 0", "scale": {"zero": false}, "type": "quantitative"}, "y": {"axis": {"title": "component 1 \u2014 36.15%"}, "field": "component 1", "scale": {"zero": false}, "type": "quantitative"}}, "name": "view_4"}, {"mark": {"type": "text"}, "encoding": {"text": {"field": "label", "type": "nominal"}, "x": {"axis": {"title": "component 0 \u2014 40.82%"}, "field": "component 0", "scale": {"zero": false}, "type": "quantitative"}, "y": {"axis": {"title": "component 1 \u2014 36.15%"}, "field": "component 1", "scale": {"zero": false}, "type": "quantitative"}}}], "data": {"name": "data-0d56b42514b677d02243b0fc52ccc547"}, "params": [{"name": "param_4", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales", "views": ["view_4"]}], "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-0d56b42514b677d02243b0fc52ccc547": [{"component 0": -0.03473175701649927, "component 1": -0.09129069808968168, "variable": "candidate", "value": "Arthaud", "label": "Arthaud"}, {"component 0": -0.09470816476067653, "component 1": -0.06469559978922419, "variable": "candidate", "value": "Dupont-Aignan", "label": "Dupont-Aignan"}, {"component 0": -0.13789664410966385, "component 1": 0.052846144209970226, "variable": "candidate", "value": "Hidalgo", "label": "Hidalgo"}, {"component 0": -0.12622833356116886, "component 1": 0.1888359673722399, "variable": "candidate", "value": "Jadot", "label": "Jadot"}, {"component 0": -0.2718670495982157, "component 1": -0.09140713874793183, "variable": "candidate", "value": "Lassalle", "label": "Lassalle"}, {"component 0": -0.11705635918325398, "component 1": -0.2156792403202124, "variable": "candidate", "value": "Le Pen", "label": "Le Pen"}, {"component 0": -0.10602671271196835, "component 1": 0.10219861920069193, "variable": "candidate", "value": "Macron", "label": "Macron"}, {"component 0": 0.0904916637885146, "component 1": 0.16251682008581853, "variable": "candidate", "value": "M\u00e9lenchon", "label": "M\u00e9lenchon"}, {"component 0": -0.12418309730025903, "component 1": -0.010074260227207671, "variable": "candidate", "value": "Poutou", "label": "Poutou"}, {"component 0": -0.06281907093170777, "component 1": 0.16385984822107882, "variable": "candidate", "value": "P\u00e9cresse", "label": "P\u00e9cresse"}, {"component 0": -0.17160912725900213, "component 1": -0.034664844004597704, "variable": "candidate", "value": "Roussel", "label": "Roussel"}, {"component 0": -0.09180172598570406, "component 1": 0.008808114295821071, "variable": "candidate", "value": "Zemmour", "label": "Zemmour"}, {"component 0": 0.2106832275207779, "component 1": -0.07726647824246717, "variable": "candidate", "value": "Abstention", "label": "Abstention"}, {"component 0": -0.040778911154341936, "component 1": 0.012151459979702373, "variable": "candidate", "value": "Blank", "label": "Blank"}]}}, {"mode": "vega-lite"});
 </script>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5b179666">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d2785041">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8369,7 +8374,7 @@ Lassalle      -0.271867 -0.091407
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1a16ca90">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7842ada1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8379,12 +8384,12 @@ Lassalle      -0.271867 -0.091407
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1bec5041">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0345c65d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [86]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">column_distribution</span> <span class="o">=</span> <span class="n">ca</span><span class="o">.</span><span class="n">column_contributions_</span>
@@ -8399,7 +8404,7 @@ Lassalle      -0.271867 -0.091407
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[86]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[38]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8501,12 +8506,12 @@ Lassalle      -0.271867 -0.091407
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0a990e7f">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1c0fa4c7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Plot the column contributions</span>
@@ -8536,7 +8541,7 @@ Lassalle      -0.271867 -0.091407
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fcf2f19d">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ccc5d115">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8551,7 +8556,7 @@ Lassalle      -0.271867 -0.091407
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [87]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">row_distribution</span> <span class="o">=</span> <span class="n">ca</span><span class="o">.</span><span class="n">row_contributions_</span>
@@ -8566,7 +8571,7 @@ Lassalle      -0.271867 -0.091407
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[87]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[40]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8688,12 +8693,12 @@ Lassalle      -0.271867 -0.091407
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=eb8b2b6a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6a5d539b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [95]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Plot the row contributions</span>
@@ -8723,7 +8728,7 @@ Lassalle      -0.271867 -0.091407
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9a8aa750">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c34cf53a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8734,7 +8739,7 @@ Lassalle      -0.271867 -0.091407
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d898829a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=58d7970a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8744,12 +8749,12 @@ Lassalle      -0.271867 -0.091407
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5e99e52d">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f3b7a666">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [91]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [42]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Get the quality of representation of each point (rows and columns) in the reduced space. Higher values indicate that a point is well represented on the selected dimensions.</span>
@@ -8764,7 +8769,7 @@ Lassalle      -0.271867 -0.091407
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[91]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[42]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>(                                   0         1
  region                                        
@@ -8811,7 +8816,7 @@ Lassalle      -0.271867 -0.091407
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [43]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">col_cosc</span><span class="o">=</span> <span class="n">ca</span><span class="o">.</span><span class="n">column_cosine_similarities</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
@@ -8842,12 +8847,12 @@ Lassalle      -0.271867 -0.091407
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b58e97b1">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f509cfc3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [94]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [44]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">row_cosc</span> <span class="o">=</span> <span class="n">ca</span><span class="o">.</span><span class="n">row_cosine_similarities</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
@@ -8879,7 +8884,7 @@ Lassalle      -0.271867 -0.091407
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2a45113f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fd7bd823">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8890,40 +8895,20 @@ Lassalle      -0.271867 -0.091407
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9f78913f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b5a926a7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Discuss how much variance is explained by the first two dimensions and the importance of each dimension.</strong></p>
-<p><strong>Discuss how columns (candidates) and rows (regions) contribute to the factors and what the plot tells us about the relationship about the two variables.</strong></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=028ef22c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Useful summary:</strong></p>
-<p>The final output of Correspondence Analysis (CA) consists of several key components that help interpret the relationships between the rows and columns of a contingency table (i.e., categorical variables). These outputs typically include:</p>
-<p><strong>1. Row Coordinates (Row Scores)</strong>
-These are the coordinates of the rows (e.g., regions, departments) in the reduced factor space. They show how each row is represented on the principal dimensions (factors) derived from the analysis. These coordinates can be plotted to visualize how different rows are positioned relative to each other, indicating similarities or differences between the categories.</p>
-<p><strong>2. Column Coordinates (Column Scores)</strong>
-These are the coordinates of the columns (e.g., candidates, categories) in the reduced factor space. Similar to row coordinates, they represent how each column relates to the principal dimensions. These scores can also be visualized on a scatter plot alongside the row coordinates, showing relationships between rows and columns.</p>
-<p><strong>3. Eigenvalues and Explained Inertia</strong>
-Eigenvalues represent the amount of inertia (variance) captured by each dimension. Higher eigenvalues indicate dimensions that explain more of the association in the data. Explained inertia is the proportion of the total inertia (variance) explained by each dimension. It helps assess how much information is captured by the first few dimensions and determines the optimal number of dimensions to keep.</p>
-<p><strong>4. Row Contributions</strong>
-The contribution of each row to the total inertia of a given dimension. This helps identify which rows (categories) are most responsible for the formation of each dimension.</p>
-<p><strong>5. Column Contributions</strong>
-The contribution of each column to the total inertia of a dimension. This shows which columns (categories) have the greatest influence on a specific dimension.</p>
-<p><strong>6. Row and Column Masses</strong>
-Row masses represent the relative importance (weight) of each row in the contingency table. Column masses represent the relative importance of each column. These masses are used in normalization during CA to account for uneven distributions.</p>
-<p><strong>7. Factor Maps (Biplots)</strong>
-These are visual representations of the row and column coordinates on the first two or more dimensions. The row factor map shows the distribution of rows in the reduced space, while the column factor map shows the positioning of columns. A biplot can display both row and column coordinates on the same graph, showing the associations between rows and columns in the reduced dimensional space.</p>
+<p><strong>Variance Explained by the First Two Dimensions:</strong></p>
+<p>The first two dimensions of the Correspondence Analysis explain a significant portion of the total variance. Specifically, the first dimension explains 40.82% of the variance, while the second dimension explains 36.15%. Together, these two dimensions account for 76.97% of the total variance. This indicates that the first two dimensions capture the majority of the information in the data, making them crucial for interpreting the relationships between the variables.</p>
+<p><strong>Importance of Each Dimension:</strong></p>
+<p>The first dimension is the most important, explaining 40.82% of the variance. This suggests that the primary factor driving the differences in the data is captured along this axis. The second dimension, explaining 36.15% of the variance, also plays a significant role but to a lesser extent. The remaining dimensions contribute less to the overall variance, indicating that they capture more minor variations in the data.</p>
+<p><strong>Contribution of Columns (Candidates) and Rows (Regions) to the Factors:</strong></p>
+<p>The factor scores indicate how each candidate and region contributes to the dimensions. For instance, Abstention and La Réunion have high positive scores on the first dimension, suggesting a strong association. Conversely, Le Pen and Ile-de-France have high negative scores, indicating a different pattern of association. The contributions of each candidate and region to the factors help us understand the underlying structure of the data.</p>
+<p><strong>Interpretation of the Plot:</strong></p>
+<p>The CA plot reveals the relationships between candidates and regions. Points that are close together on the plot indicate a strong association. For example, if Candidate A and Region 1 are close on the plot, it suggests that Candidate A is particularly popular in Region 1. Conversely, if Candidate B and Region 2 are far apart, it indicates a weaker association. The plot helps visualize these relationships, making it easier to identify patterns and clusters in the data.</p>
 </div>
 </div>
 </div>
